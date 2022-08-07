@@ -1,0 +1,8 @@
+strava:
+  baseUrl: https://www.strava.com
+  tokenUri: /oauth/token
+  v3BaseUrl: https://www.strava.com/api/v3
+  athleteActivitiesUri: /athlete/activities
+  detailedActivityUri: /activities
+
+
