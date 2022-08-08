@@ -32,10 +32,17 @@ public class StravaHRController {
         return stravaService.getToken(getTokenData.getCode());
     }
 
+    // TODO - add date range filter
     @RequestMapping(path = "/activities", method = RequestMethod.GET)
     @ResponseBody
-    public List<Activity> listActivities(HttpServletRequest request, @RequestParam(required = false) boolean weight) {
-        return stravaService.listActivities(getBererTokenFromHeader(request), weight);
+    public List<Activity> listActivities(HttpServletRequest request,
+                                         @RequestParam(required = false) String fromDate,
+                                         @RequestParam(required = false) String toDate,
+                                         @RequestParam(required = false) String activityType,
+                                         @RequestParam(required = false) boolean weight) {
+        System.out.println("received listActivities request with fromDate=" + fromDate + ", toDate=" + toDate
+                + ", activityType=" + activityType + ", weight=" + weight);
+        return stravaService.listActivities(getBererTokenFromHeader(request), fromDate, toDate, activityType, weight);
     }
 
     private String getBererTokenFromHeader(HttpServletRequest request) {

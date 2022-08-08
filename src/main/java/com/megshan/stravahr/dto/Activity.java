@@ -17,7 +17,7 @@ public class Activity {
     Float heartRate;
     Float weight;
     Float elevationGain; // meters
-    Float averageSpeed; // m/s
+    Float averageSpeed; // min/mile
     String type;
     LocalDateTime startDateLocal;
 }
